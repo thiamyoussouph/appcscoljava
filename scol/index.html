@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>scoll</title>
+</head>
+
+<body>
+    <div class="card"></div>
+    <div class="container">
+        <div class="nav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html">ajouter</a>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="navbar-brand" href="liste des aprrenant.html">liste apprenamy</a>
+                      </li>
+                      
+                    </ul>
+                    
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <div class="row">
+            <div class="col-4" id="divformulaire">
+
+                <form action="" id="input"></form>
+                <legend>formulaire d inscription</legend>
+                <div class="mb-3">
+                    <label for="nom" class="form-label">nom</label>
+                    <input type="text" id="nom" class="form-control" placeholder="votren om">
+                </div>
+                <div class="mb-3">
+                    <label for="prenom" class="form-label">prenom</label>
+                    <input type="text" id="prenom" class="form-control" placeholder="prenom">
+                </div>
+                <div class="mb-3">
+                    <label for="niveau" class="form-label">niveau</label>
+                    <select id="niveau" class="form-select">
+                        <option value="BIEN">bien</option>
+                        <option value="PASSABLE">passable</option>
+                        <option value="TREBIEN">trebien</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="message">message</label>
+                    <div class="form-floating">
+
+                        <textarea class="form-control" placeholder="Leave a comment here" id="message"
+                            style="height: 100px"></textarea>
+
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" id="ajouter">envoyer</button>
+                </div>
+                </fieldset>
+                </form>
+            </div>
+            <div class="col-8 cart" id="divecarte">
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+    <button class="btn btn-primary" style="margin-left: 87%;" id="sauvegarder">sauvgarder</button>
+    </div>
+
+    <script src="index.js"></script>
+    
+
+</body>
+
+</html>
