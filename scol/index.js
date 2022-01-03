@@ -92,7 +92,7 @@ const carte=document.getElementById("card")
     const testesuprimer=document.getElementById(btnsup)
  
  testesuprimer.addEventListener("click",(e)=> {
-    alert("pmy")
+   
         let index=tab.indexOf(newtab)
     console.log(index);
     tab.splice(index,1)

@@ -27,7 +27,7 @@ function creercard(apprenant) {
   const btnsup = "btn-sup" + apprenant.id
   const btnmod = "btn-mod" + apprenant.id
   part.insertAdjacentHTML('beforebegin', `<div class="card" id="card" style="  margin-top: 1%; margin-left:0.1%; width: 70%;
-  height:rem; background-color: grey;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radus:25%;">
+  height:rem; background-color: grey; :focus box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radus:25%;">
       <div class="row">
           <div class="col-2"><img src="index.png" alt="" srcset="" style="width: 5rem;  height: 7em" ;> </div>
           <div class="col-6 les ">
@@ -47,14 +47,30 @@ function creercard(apprenant) {
   const mod = document.getElementById(btnmod)
 
   mod.addEventListener("click", (e) => {
+    
     alert("on modifie")
   })
   const sup = document.getElementById(btnsup)
   sup.addEventListener("click", (e) => {
-    let index = tof.indexof
     alert("on veux suprimer")
+    fetch(API_URL+"?id=eq."+apprenant.id, {
+      method:"DELETE",
+      headers: {
+        apikey: API_KEY,
+        "Content-Type": "application/json",
+        Prefer: "return=representation",
+      
+      },
+    })
+      .then((response) => response.json())
+      .then((tof) => {
+        tof.forEach((tof) => {
+         location.reload()
+        })
+      })
   })
   const detal = document.getElementById(detail)
+  
 
   detal.addEventListener("click", (e) => {
 
@@ -91,7 +107,7 @@ function creercard(apprenant) {
  `
     )
     const bar = document.querySelectorAll(".progress div")
-    console.log(apprenant.niveau);
+   
     
 
     console.log(bar);
@@ -101,6 +117,8 @@ function creercard(apprenant) {
         bar.forEach(bar => {
           console.log(bar);
           bar.style.width="60%"
+          bar.innerHTML="jj"
+          console.log(bar);
         })
       }
       if(apprenant.niveau==="TREBIEN"){
@@ -115,15 +133,17 @@ function creercard(apprenant) {
           bar.style.width="30%"
         })
       }
-    const cartesup = document.getElementById("card")
+   
 
     const deleted = document.getElementById("delete")
+    
 
     deleted.addEventListener("click", (e) => {
       alert("o veux suprimmer ")
-      html.remove(affichedetail)
-
-
+      affichedetail.previousSibling.remove(card)
+      console.log(affichedetail);
+      
+      
     })
   })
 
