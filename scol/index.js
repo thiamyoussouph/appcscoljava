@@ -43,39 +43,26 @@ function creercard(apprenant){
 </div>  `);
 const carte=document.getElementById("card")
     const idmodifier=btnmod.substring(7,btnmod.length)
-    
-//     const card=document.createElement("div")
-//     card.classList.add("card")
-//     card.classList.add("card-body")
-//     card.style="width: 18rem;"
-//     const cardbody=document.createElement("div")
-//     const cartdimg=document.createElement('img')
-//     const carttitre= document.createElement("h3")
-//     const carttexte=document.createElement("p")
-//     const cartnieveu=document.createElement("h2")
-//     const butoon= document.createElement("button")
-//     const butoon2= document.createElement("button")
-//     const divphoto=document.createElement("div")
-//     divphoto.classList.add("col-6")
 
-//     butoon.setAttribute("id",btnmod)
-//     butoon.textContent="modifier,"
-//     butoon2.setAttribute("id",btnsup)
-//    butoon2.textContent="suprimer"
-//     carttitre.textContent=apprenant.nom +" " +apprenant.prenom
-//     carttexte.textContent=apprenant.contenu
-//     cartnieveu.textContent=apprenant.niveau
-//     cardbody.appendChild(cartdimg)
-//     cardbody.appendChild(carttitre)
-//     cardbody.appendChild(carttexte)
-//     cardbody.appendChild(cartnieveu)
-//     cardbody.appendChild(butoon)
-//     cardbody.appendChild(butoon2)
-//     card.appendChild(cardbody)
-//     part.appendChild(card)
     const testemodifier=document.getElementById(btnmod)
     testemodifier.addEventListener("click",(e)=>{
  
+      part.insertAdjacentHTML('beforebegin', `<div class="card"  id="card"style="  margin-top: 2%; margin-left: 2%; width: 33rem; 
+   height: 15rem; background-color: grey;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);;">
+  <div class="row">
+  <div class="col-2"><img src="index.png" alt="" srcset=""style="width: 7rem;  height: 7rem";>  <img src="x.svg" alt="" srcset=""></div>
+  <div class="col-6 les ">
+  <div class="d-flex" style="margin-top:-10%;margin-left:120%;">
+  <img id="${btnsup}"src="trash.svg" alt="" srcset="">
+  <img id="${btnmod}"src="pencil-square.svg" alt="" srcset=""></div>
+      <h2>${apprenant.nom}    ${apprenant.prenom}</h2>
+      <p>${apprenant.contenu}</p>
+      <h2>${apprenant.niveau}</h2>
+       <h2>${apprenant.niveau}</h2>
+  </div>
+</div>
+
+</div>  `);
    e.preventDefault()
    
    tab.forEach(apprenant => {
@@ -165,6 +152,12 @@ prenom.value=""
    message.value=""
    nouveau.value=""
   nom.value=""
+maquette.value=""
+console.log(maquette.value);
+  integration.value=""
+javascript.value=""
+php.value=""
+java.value=""
   
 
 })

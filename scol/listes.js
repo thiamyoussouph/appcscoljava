@@ -47,6 +47,67 @@ function creercard(apprenant) {
   const mod = document.getElementById(btnmod)
 
   mod.addEventListener("click", (e) => {
+    affichedetail.insertAdjacentHTML('beforebegin', `<form action="" id="input"></form>
+    <legend>formulaire de modifications</legend>
+    <div class="mb-3">
+        <label for="nom" class="form-label">nom</label>
+        <input type="text" id="nom" class="form-control" placeholder="votren om"value="${apprenant.nom}">
+    </div>
+    <div class="mb-3">
+        <label for="prenom" class="form-label">prenom</label>
+        <input type="text" id="prenom" class="form-control" placeholder="prenom"value="${apprenant.prenom}">
+    </div>
+    <div class="mb-3">
+        <label for="niveau" class="form-label"value="${apprenant.niveau}">niveau</label>
+        <select id="niveau" class="form-select">
+            <option value="BIEN">bien</option>
+            <option value="PASSABLE">passable</option>
+            <option value="TREBIEN">trebien</option>
+        </select>
+    </div>
+    <div class=" d-flex competence">
+        <div class="col-auto " style="width: 20%;margin-left:0%">
+            <label for="maquette">maquette</label>
+            <input type="text" id="maquette" class="form-control"
+                aria-describedby="passwordHelpInline" placeholder="/100"value="${apprenant.maquette}">
+        </div>
+        <div class="col-auto " style="width: 20%;margin-left:2%">
+            <label for="integration">integration</label>
+            <input type="text" id="integration" class="form-control"
+                aria-describedby="passwordHelpInline" placeholder="/100"value="${apprenant.integration}">
+        </div>
+        <div class="col-auto " style="width: 20%;margin-left:2%">
+            <label for="javascript">javascript</label>
+            <input type="text" id="javascript" class="form-control"
+                aria-describedby="passwordHelpInline" placeholder="/100"value="${apprenant.javascripte}">
+        </div>
+        <div class="col-auto " style="width: 20%;margin-left:2%">
+            <label for="java">java</label>
+            <input type="text" id="java" class="form-control"
+                aria-describedby="passwordHelpInline" placeholder="/100"value="${apprenant.java}">
+        </div>
+        <div class="col-auto " style="width: 20%;margin-left:2%">
+            <label for="php">php</label>
+            <input type="number" id="php" class="form-control"
+                aria-describedby="passwordHelpInline" placeholder="/100"value="${apprenant.php}">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="message">message</label>
+        <div class="form-floating">
+
+            <textarea class="form-control" placeholder="Leave a comment here" id="message"
+                style="height: 100px" value="${apprenant.message}"></textarea>
+
+        </div>
+
+
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary" id="modifier">modifier</button>
+    </div>
+    </fieldset>
+    </form> `);
     
     
       e.stopPropagation()
@@ -147,14 +208,7 @@ function creercard(apprenant) {
  `
     )
     
-   console.log(typeof apprenant.niveau);
-    
-      maquet.style.width=apprenant.maquette
-      console.log(maquet);
-        // bar.forEach(bar => {
-        //   console.log(bar);
-        //   bar.style.width="60%"
-        //   bar.innerHTML="60%"
+  
         
    
 
