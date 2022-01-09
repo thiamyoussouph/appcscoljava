@@ -48,7 +48,39 @@ function creercard(apprenant) {
 
   mod.addEventListener("click", (e) => {
     
-    alert("on modifie")
+    
+      e.stopPropagation()
+      const envoimod=document.getElementById("modifier")
+      
+      envoimod.addEventListener("click",(e)=>{
+        alert("on veu modifier" )
+        fetch(API_URL+"?id=eq."+apprenant.id, {
+          method:"PATCH",
+          headers: {
+            apikey: API_KEY,
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
+          
+          },
+          body:JSON.stringify({
+            "nom":nom.value,
+            "prenom":prenom.value,
+            "contenu":message.value,
+            "niveau":niveau.value
+
+          })
+        })
+          .then((response) => response.json())
+          .then((tof) => {
+            tof.forEach((tof) => {
+             location.reload()
+            })
+          })
+
+      })
+
+    
+  
   })
   const sup = document.getElementById(btnsup)
   sup.addEventListener("click", (e) => {
@@ -81,7 +113,7 @@ function creercard(apprenant) {
       <div class="row">
           <div class="col-2"><img src="index.png" alt="" srcset="" style="width: 5rem;  height: 5rem" ;> </div>
           <div class="col-6 les ">
-              <div class="d-flex" style="margin-top:-20%;margin-left:89%; margin-bottom:17%">
+              <div class="d-flex" style="margin-top:-10%;margin-left:89%; margin-bottom:17%">
                <span class ="btn"id="delete">X</span>
                   <img id="${btnsup}" src="trash.svg" alt="" srcset="">
                   <img id="${btnmod}" src="pencil-square.svg" alt="" srcset="">
@@ -89,50 +121,41 @@ function creercard(apprenant) {
               <h2>${apprenant.nom} ${apprenant.prenom}</h2>
               <p>${apprenant.contenu}</p>
               <h2>${apprenant.niveau}</h2>
-              <div class="progress "style="width: 60%; margin:1%">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>maquette</p>
+              <div class="progress"style="width: 60%; margin:1%"id="progress1">
+    <div class="progress-bar bg-success" role="progressbar" style="width: ${apprenant.maquette}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
-  <div class="progress" style="width: 60%; margin:1%">
-    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  <p>integration</p>
+  <div class="progress" style="width: 60%; margin:1%"id="progress2">
+ <div class="progress-bar bg-info" role="progressbar" style="width:${apprenant.integration}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
-  <div class="progress" style="width: 60%; margin:1%">
-    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  <p>java</p>
+  <div class="progress" style="width:60%; margin:1%">
+    <div class="progress-bar bg-warning" role="progressbar" style="width:${apprenant.java}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
-  <div class="progress"style="width: 60%; margin:1%">
-    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  <p>php</p>
+  <div class="progress"style="width: 60%; margin:1%"id="progress4">
+    <div class="progress-bar bg-danger" role="progressbar" style="width:${apprenant.php}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <p>javascripte</p>
+  <div class="progress"style="width: 60%; margin:1%"id="progress5">
+    <div class="progress-bar bg-danger" role="progressbar" style="width:${apprenant.javascripte }%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
           </div>
       </div>
 
  `
     )
-    const bar = document.querySelectorAll(".progress div")
-   
     
-
-    console.log(bar);
    console.log(typeof apprenant.niveau);
     
-      if(apprenant.niveau==="BIEN"){
-        bar.forEach(bar => {
-          console.log(bar);
-          bar.style.width="60%"
-          bar.innerHTML="jj"
-          console.log(bar);
-        })
-      }
-      if(apprenant.niveau==="TREBIEN"){
-        bar.forEach(bar => {
-          console.log(bar);
-          bar.style.width="90%"
-        })
-      }
-      if(apprenant.niveau==="PASSABLE"){
-        bar.forEach(bar => {
-          console.log(bar);
-          bar.style.width="30%"
-        })
-      }
+      maquet.style.width=apprenant.maquette
+      console.log(maquet);
+        // bar.forEach(bar => {
+        //   console.log(bar);
+        //   bar.style.width="60%"
+        //   bar.innerHTML="60%"
+        
    
 
     const deleted = document.getElementById("delete")

@@ -10,7 +10,12 @@ const nom=document.getElementById("nom")
 const prenom=document.getElementById("prenom")
 const message=document.getElementById("message")
 const nouveau=document.getElementById("niveau")
-console.log(nouveau);
+const maquette=document.getElementById("maquette")
+const integration=document.getElementById("integration")
+const javascripte=document.getElementById("javascript")
+const java=document.getElementById("java")
+const php=document.getElementById("php")
+ console.log(nouveau);
 
 
 
@@ -29,6 +34,8 @@ function creercard(apprenant){
       <h2>${apprenant.nom}    ${apprenant.prenom}</h2>
       <p>${apprenant.contenu}</p>
       <h2>${apprenant.niveau}</h2>
+       <h2>${apprenant.niveau}</h2>
+
       
   </div>
 </div>
@@ -117,13 +124,23 @@ boutonajout.addEventListener("click",(e)=>{
     const prenonsaisi=prenom.value
 const messages=message.value
 const niveau=nouveau.value
+const maquetage=maquette.value
+const integrations=integration.value
+const javascript=javascripte.value
+const javas=java.value
+const phps=php.value
 console.log(niveau);
 newtab= {
       id:Date.now(),
         nom:nomaisi,
         prenom:prenonsaisi,   
         contenu:messages,            
-        niveau:niveau
+        niveau:niveau,
+        maquette:maquetage,
+        integration:integrations,
+        javascripte:javascript,
+        java:javas,
+        php:phps
     } 
     // fetch(API_URL, {
     //     method: "POST",
@@ -216,6 +233,7 @@ sauvegarder.addEventListener("click",(e)=>{
              
             })
         })
-        tab=[]
+       
+      
        part.innerText="vos donner on bien etais enregistrer "
 })
