@@ -17,6 +17,33 @@ const java=document.getElementById("java")
 const php=document.getElementById("php")
  console.log(nouveau);
 
+ const inputtitre=document.getElementById("exampleInputEmail1")
+  const inpusuget=document.getElementById("message")
+  inpusuget.addEventListener("input",(e)=>{
+    const maxttext=20
+    const contenue=inpusuget.value
+    const longeursaisie=contenue.length
+    const reste=maxttext-longeursaisie
+
+
+        const progres=document.getElementById("progression")
+      const rest=document.getElementById("reste")
+
+      const para=document.getElementById("contenuesaisi")
+      progres.textContent=longeursaisie
+      rest.textContent = "il vous reste "+reste
+   
+       
+      
+      if(reste<=5){
+        para.style.color="yellow"
+      }
+      if(reste<0){
+     para.style.color="red"
+     valider.disabled = true
+      }
+  })
+
 
 
 function creercard(apprenant){
